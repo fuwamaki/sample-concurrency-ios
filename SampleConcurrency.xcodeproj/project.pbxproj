@@ -15,6 +15,8 @@
 		2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2005075D2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld */; };
 		200507692671131B009D7EE0 /* SampleConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */; };
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
+		20F53E46267115D6007C80EA /* QiitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E45267115D6007C80EA /* QiitaView.swift */; };
+		20F53E482671162F007C80EA /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E472671162F007C80EA /* GithubView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyTests.swift; sourceTree = "<group>"; };
 		2005076E2671131B009D7EE0 /* SampleConcurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleConcurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
+		20F53E45267115D6007C80EA /* QiitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaView.swift; sourceTree = "<group>"; };
+		20F53E472671162F007C80EA /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,9 @@
 			children = (
 				2005075226711319009D7EE0 /* SampleConcurrencyApp.swift */,
 				2005075426711319009D7EE0 /* ContentView.swift */,
-				200507562671131B009D7EE0 /* Assets.xcassets */,
 				2005075B2671131B009D7EE0 /* Persistence.swift */,
+				20F53E42267115AD007C80EA /* Views */,
+				20F53E412671153A007C80EA /* Resources */,
 				2005075D2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld */,
 				200507582671131B009D7EE0 /* Preview Content */,
 			);
@@ -128,6 +133,23 @@
 				200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */,
 			);
 			path = SampleConcurrencyUITests;
+			sourceTree = "<group>";
+		};
+		20F53E412671153A007C80EA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				200507562671131B009D7EE0 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		20F53E42267115AD007C80EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				20F53E45267115D6007C80EA /* QiitaView.swift */,
+				20F53E472671162F007C80EA /* GithubView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +285,9 @@
 				2005075C2671131B009D7EE0 /* Persistence.swift in Sources */,
 				2005075526711319009D7EE0 /* ContentView.swift in Sources */,
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
+				20F53E46267115D6007C80EA /* QiitaView.swift in Sources */,
 				2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */,
+				20F53E482671162F007C80EA /* GithubView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
