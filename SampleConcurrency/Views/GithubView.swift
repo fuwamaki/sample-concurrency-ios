@@ -8,8 +8,24 @@
 import SwiftUI
 
 struct GithubView: View {
+    private var apiClient = APIClient()
+    @State var items: [GithubRepo] = []
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        List(items) {
+            Label($0.fullName, image: $0.owner.avatarUrl)
+        }
+        .onAppear {
+            fetch()
+        }
+    }
+
+    private func fetch() {
+        async {
+            items = try await apiClient
+                .fetch(
+                    url: URL(string: "https://api.github.com/search/repositories?q=swift")!).items
+        }
     }
 }
 

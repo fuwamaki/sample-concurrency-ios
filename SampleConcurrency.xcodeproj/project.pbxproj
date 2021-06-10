@@ -17,6 +17,7 @@
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
 		20F53E46267115D6007C80EA /* QiitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E45267115D6007C80EA /* QiitaView.swift */; };
 		20F53E482671162F007C80EA /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E472671162F007C80EA /* GithubView.swift */; };
+		20F53E4A26718F4A007C80EA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E4926718F4A007C80EA /* APIClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
 		20F53E45267115D6007C80EA /* QiitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaView.swift; sourceTree = "<group>"; };
 		20F53E472671162F007C80EA /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
+		20F53E4926718F4A007C80EA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				2005075226711319009D7EE0 /* SampleConcurrencyApp.swift */,
 				2005075426711319009D7EE0 /* ContentView.swift */,
 				2005075B2671131B009D7EE0 /* Persistence.swift */,
+				20F53E4926718F4A007C80EA /* APIClient.swift */,
 				20F53E42267115AD007C80EA /* Views */,
 				20F53E412671153A007C80EA /* Resources */,
 				2005075D2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld */,
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2005075C2671131B009D7EE0 /* Persistence.swift in Sources */,
+				20F53E4A26718F4A007C80EA /* APIClient.swift in Sources */,
 				2005075526711319009D7EE0 /* ContentView.swift in Sources */,
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
 				20F53E46267115D6007C80EA /* QiitaView.swift in Sources */,
@@ -455,7 +459,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -485,7 +489,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

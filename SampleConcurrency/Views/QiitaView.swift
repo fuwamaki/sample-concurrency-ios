@@ -8,8 +8,21 @@
 import SwiftUI
 
 struct QiitaView: View {
+    private var apiClient = APIClient()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button {
+            fetch()
+        } label: {
+            Text("fetch")
+        }
+    }
+
+    private func fetch() {
+        async {
+            let aaa = try await apiClient.fetch(
+                url: URL(string: "https://api.github.com/search/repositories?q=swift")!)
+            print(aaa)
+        }
     }
 }
 
