@@ -9,12 +9,20 @@ import SwiftUI
 
 struct GithubView: View {
     private var apiClient = APIClient()
+    @State var searchText: String = ""
     @State var items: [GithubRepo] = []
 
+    @Environment(\.isSearching)
+    private var isSearching: Bool
+
     var body: some View {
-        List(items) {
-            Label($0.fullName, image: $0.owner.avatarUrl)
+        NavigationView {
+            List(items) {
+                Label($0.fullName, image: $0.owner.avatarUrl)
+            }
+            .navigationTitle(Text("Github Repository"))
         }
+        .searchable(text: $searchText)
         .onAppear {
             fetch()
         }
