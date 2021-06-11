@@ -17,18 +17,23 @@ struct GithubView: View {
 
     var body: some View {
         NavigationView {
-            List(items) {
-                Label($0.fullName, image: $0.owner.avatarUrl)
+            List {
+                ForEach(items) { item in
+                    GithubItemView(repo: item)
+                }
             }
             .navigationTitle(Text("Github Repository"))
         }
         .searchable(text: $searchText)
         .onSubmit(of: .search, {
-            fetch()
+            async {
+                await fetch()
+            }
         })
     }
 
-    private func fetch() {
+    private func fetch() async {
+        guard searchText.count > 0 else { return }
         async {
             items = try await apiClient
                 .fetch(url: APIUrl.githubRepo(query: searchText))
