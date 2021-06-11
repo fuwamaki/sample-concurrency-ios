@@ -15,6 +15,10 @@
 		2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2005075D2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld */; };
 		200507692671131B009D7EE0 /* SampleConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */; };
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
+		20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895DC2672E7C0001AA1DE /* GithubRepoList.swift */; };
+		20C895DF2672E7DC001AA1DE /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895DE2672E7DC001AA1DE /* GithubRepo.swift */; };
+		20C895E12672E7EE001AA1DE /* GithubRepoOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895E02672E7EE001AA1DE /* GithubRepoOwner.swift */; };
+		20C895E42672E816001AA1DE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895E32672E816001AA1DE /* APIError.swift */; };
 		20F53E46267115D6007C80EA /* QiitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E45267115D6007C80EA /* QiitaView.swift */; };
 		20F53E482671162F007C80EA /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E472671162F007C80EA /* GithubView.swift */; };
 		20F53E4A26718F4A007C80EA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E4926718F4A007C80EA /* APIClient.swift */; };
@@ -49,6 +53,10 @@
 		200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyTests.swift; sourceTree = "<group>"; };
 		2005076E2671131B009D7EE0 /* SampleConcurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleConcurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
+		20C895DC2672E7C0001AA1DE /* GithubRepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoList.swift; sourceTree = "<group>"; };
+		20C895DE2672E7DC001AA1DE /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
+		20C895E02672E7EE001AA1DE /* GithubRepoOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoOwner.swift; sourceTree = "<group>"; };
+		20C895E32672E816001AA1DE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		20F53E45267115D6007C80EA /* QiitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaView.swift; sourceTree = "<group>"; };
 		20F53E472671162F007C80EA /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
 		20F53E4926718F4A007C80EA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -105,8 +113,9 @@
 				2005075226711319009D7EE0 /* SampleConcurrencyApp.swift */,
 				2005075426711319009D7EE0 /* ContentView.swift */,
 				2005075B2671131B009D7EE0 /* Persistence.swift */,
-				20F53E4926718F4A007C80EA /* APIClient.swift */,
 				20F53E42267115AD007C80EA /* Views */,
+				20C895DB2672E7A6001AA1DE /* Model */,
+				20C895E22672E7FE001AA1DE /* API */,
 				20F53E412671153A007C80EA /* Resources */,
 				2005075D2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld */,
 				200507582671131B009D7EE0 /* Preview Content */,
@@ -136,6 +145,25 @@
 				200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */,
 			);
 			path = SampleConcurrencyUITests;
+			sourceTree = "<group>";
+		};
+		20C895DB2672E7A6001AA1DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				20C895DC2672E7C0001AA1DE /* GithubRepoList.swift */,
+				20C895DE2672E7DC001AA1DE /* GithubRepo.swift */,
+				20C895E02672E7EE001AA1DE /* GithubRepoOwner.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20C895E22672E7FE001AA1DE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				20F53E4926718F4A007C80EA /* APIClient.swift */,
+				20C895E32672E816001AA1DE /* APIError.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		20F53E412671153A007C80EA /* Resources */ = {
@@ -287,11 +315,15 @@
 			files = (
 				2005075C2671131B009D7EE0 /* Persistence.swift in Sources */,
 				20F53E4A26718F4A007C80EA /* APIClient.swift in Sources */,
+				20C895E12672E7EE001AA1DE /* GithubRepoOwner.swift in Sources */,
+				20C895DF2672E7DC001AA1DE /* GithubRepo.swift in Sources */,
 				2005075526711319009D7EE0 /* ContentView.swift in Sources */,
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
+				20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */,
 				20F53E46267115D6007C80EA /* QiitaView.swift in Sources */,
 				2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */,
 				20F53E482671162F007C80EA /* GithubView.swift in Sources */,
+				20C895E42672E816001AA1DE /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
