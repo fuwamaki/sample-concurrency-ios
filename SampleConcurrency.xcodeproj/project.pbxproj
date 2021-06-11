@@ -19,6 +19,7 @@
 		20C895DF2672E7DC001AA1DE /* GithubRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895DE2672E7DC001AA1DE /* GithubRepo.swift */; };
 		20C895E12672E7EE001AA1DE /* GithubRepoOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895E02672E7EE001AA1DE /* GithubRepoOwner.swift */; };
 		20C895E42672E816001AA1DE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895E32672E816001AA1DE /* APIError.swift */; };
+		20C895E62672E995001AA1DE /* APIUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895E52672E995001AA1DE /* APIUrl.swift */; };
 		20F53E46267115D6007C80EA /* QiitaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E45267115D6007C80EA /* QiitaView.swift */; };
 		20F53E482671162F007C80EA /* GithubView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E472671162F007C80EA /* GithubView.swift */; };
 		20F53E4A26718F4A007C80EA /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F53E4926718F4A007C80EA /* APIClient.swift */; };
@@ -57,6 +58,7 @@
 		20C895DE2672E7DC001AA1DE /* GithubRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepo.swift; sourceTree = "<group>"; };
 		20C895E02672E7EE001AA1DE /* GithubRepoOwner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoOwner.swift; sourceTree = "<group>"; };
 		20C895E32672E816001AA1DE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		20C895E52672E995001AA1DE /* APIUrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIUrl.swift; sourceTree = "<group>"; };
 		20F53E45267115D6007C80EA /* QiitaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaView.swift; sourceTree = "<group>"; };
 		20F53E472671162F007C80EA /* GithubView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubView.swift; sourceTree = "<group>"; };
 		20F53E4926718F4A007C80EA /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				20F53E4926718F4A007C80EA /* APIClient.swift */,
 				20C895E32672E816001AA1DE /* APIError.swift */,
+				20C895E52672E995001AA1DE /* APIUrl.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
 				20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */,
 				20F53E46267115D6007C80EA /* QiitaView.swift in Sources */,
+				20C895E62672E995001AA1DE /* APIUrl.swift in Sources */,
 				2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */,
 				20F53E482671162F007C80EA /* GithubView.swift in Sources */,
 				20C895E42672E816001AA1DE /* APIError.swift in Sources */,

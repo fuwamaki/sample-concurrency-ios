@@ -23,16 +23,16 @@ struct GithubView: View {
             .navigationTitle(Text("Github Repository"))
         }
         .searchable(text: $searchText)
-        .onAppear {
+        .onSubmit(of: .search, {
             fetch()
-        }
+        })
     }
 
     private func fetch() {
         async {
             items = try await apiClient
-                .fetch(
-                    url: URL(string: "https://api.github.com/search/repositories?q=swift")!).items
+                .fetch(url: APIUrl.githubRepo(query: searchText))
+                .items
         }
     }
 }
