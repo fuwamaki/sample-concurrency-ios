@@ -26,13 +26,11 @@ struct GithubView: View {
         }
         .searchable(text: $searchText)
         .onSubmit(of: .search, {
-            async {
-                await fetch()
-            }
+            fetch()
         })
     }
 
-    private func fetch() async {
+    private func fetch() {
         guard searchText.count > 0 else { return }
         async {
             items = try await apiClient
