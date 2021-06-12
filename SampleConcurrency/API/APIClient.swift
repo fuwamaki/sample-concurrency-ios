@@ -9,7 +9,7 @@ import Foundation
 
 final class APIClient {
 
-    func fetch(url: URL) async throws -> GithubRepoList {
+    func fetchGithubRepo(url: URL) async throws -> GithubRepoList {
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {
@@ -21,5 +21,14 @@ final class APIClient {
         } catch {
             throw APIError.jsonParseError
         }
+    }
+
+    func fetchImageData(url: URL) async throws -> Data {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+                  throw APIError.unknownError
+              }
+        return data
     }
 }

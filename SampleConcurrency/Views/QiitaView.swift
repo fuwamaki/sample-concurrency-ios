@@ -19,7 +19,7 @@ struct QiitaView: View {
 
     private func fetch() {
         async {
-            let aaa = try await apiClient.fetch(
+            let aaa = try await apiClient.fetchGithubRepo(
                 url: URL(string: "https://api.github.com/search/repositories?q=swift")!)
             print(aaa)
         }

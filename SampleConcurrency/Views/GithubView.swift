@@ -21,7 +21,7 @@ struct GithubView: View {
             ZStack {
                 List {
                     ForEach(items) { item in
-                        GithubItemView(repo: item)
+                        GithubTempItemView(repo: item)
                     }
                 }
                 if isLoading {
@@ -43,7 +43,7 @@ struct GithubView: View {
         async {
             isLoading = true
             items = try await apiClient
-                .fetch(url: APIUrl.githubRepo(query: searchText))
+                .fetchGithubRepo(url: APIUrl.githubRepo(query: searchText))
                 .items
             isLoading = false
         }
