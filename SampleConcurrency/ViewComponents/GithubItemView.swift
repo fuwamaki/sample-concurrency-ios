@@ -18,6 +18,7 @@ struct GithubItemView: View {
                     .aspectRatio(contentMode: .fill)
             } placeholder: {
                 ProgressView()
+                    .tint(.cyan)
             }
             .frame(width: 40, height: 40)
             .mask(RoundedRectangle(cornerRadius: 20))
