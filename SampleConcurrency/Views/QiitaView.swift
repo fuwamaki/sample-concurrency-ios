@@ -10,10 +10,18 @@ import SwiftUI
 struct QiitaView: View {
     private var apiClient = APIClient()
     var body: some View {
-        Button {
-            fetch()
-        } label: {
-            Text("fetch")
+        VStack {
+            Button {
+                fetch()
+            } label: {
+                Label("fetch", systemImage: "sun.dust.fill")
+                    .symbolVariant(.fill)
+                    .symbolRenderingMode(.hierarchical)
+                    .foregroundStyle(.cyan, .red) // Primary, Secondary, Tertiary
+            }
+            Image(systemName: "cloud.sun.rain.fill")
+                .symbolRenderingMode(.palette)
+                .foregroundStyle(.cyan, .green, .brown)
         }
     }
 
