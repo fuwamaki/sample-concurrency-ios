@@ -13,8 +13,4 @@ struct GithubRepoOwner: Codable {
     enum CodingKeys: String, CodingKey {
         case avatarUrl = "avatar_url"
     }
-
-    init(avatarUrl: String) {
-        self.avatarUrl = avatarUrl
-    }
 }

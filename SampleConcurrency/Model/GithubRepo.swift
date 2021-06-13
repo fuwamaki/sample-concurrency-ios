@@ -21,16 +21,4 @@ struct GithubRepo: Codable, Identifiable {
         case htmlUrl = "html_url"
         case owner
     }
-
-    init(id: Int,
-         fullName: String,
-         stargazersCount: Int,
-         htmlUrl: String,
-         owner: GithubRepoOwner) {
-        self.id = id
-        self.fullName = fullName
-        self.stargazersCount = stargazersCount
-        self.htmlUrl = htmlUrl
-        self.owner = owner
-    }
 }
