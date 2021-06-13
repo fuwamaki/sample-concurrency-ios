@@ -31,8 +31,10 @@ enum APIError: Error {
             return "maintenanceError"
         case .networkError:
             return "networkError"
+        case .jsonParseError:
+            return "申し訳ありません、データが見つかりませんでした。"
         default:
-            return "unknownError"
+            return "不具合が発生しました。お手数ですが時間をおいてもう一度お試しください。"
         }
     }
 }
