@@ -25,7 +25,15 @@ struct GithubTempItemView: View {
                     .tint(.cyan)
                     .frame(width: 40, height: 40)
             }
-            Text(repo.fullName)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(repo.fullName)
+                    .font(.body)
+                Label(String(repo.stargazersCount),
+                      systemImage: "star")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .symbolRenderingMode(.multicolor)
+            }
         }
         .onAppear {
             fetch()

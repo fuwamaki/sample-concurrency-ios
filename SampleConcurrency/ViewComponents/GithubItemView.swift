@@ -22,7 +22,15 @@ struct GithubItemView: View {
             }
             .frame(width: 40, height: 40)
             .mask(RoundedRectangle(cornerRadius: 20))
-            Text(repo.fullName)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(repo.fullName)
+                    .font(.body)
+                Label(String(repo.stargazersCount),
+                      systemImage: "star")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                    .symbolRenderingMode(.multicolor)
+            }
         }
     }
 }
