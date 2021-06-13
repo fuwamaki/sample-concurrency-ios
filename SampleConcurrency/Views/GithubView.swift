@@ -12,21 +12,18 @@ struct GithubView: View {
     @State var searchText: String = ""
     @State var items: [GithubRepo] = []
     @State var isLoading: Bool = false
-
-    @Environment(\.isSearching)
-    private var isSearching: Bool
+    @State var isShowAlert: Bool = false
+    @State var alertMessage: String = ""
 
     var body: some View {
         NavigationView {
             ZStack {
-                List {
-                    ForEach(items) { item in
-                        GithubTempItemView(repo: item)
-                    }
+                List(items) { item in
+                    GithubTempItemView(repo: item)
                 }
                 if isLoading {
                     ProgressView()
-                        .frame(width: 20, height: 20)
+                        .scaleEffect(1.5, anchor: .center)
                         .tint(.cyan)
                 }
             }
@@ -36,15 +33,29 @@ struct GithubView: View {
         .onSubmit(of: .search, {
             fetch()
         })
+        .alert(isPresented: $isShowAlert) {
+            Alert(
+                title: Text("エラー"),
+                message: Text(alertMessage),
+                dismissButton: .default(Text("OK")))
+        }
     }
 
     private func fetch() {
         guard searchText.count > 0 else { return }
         async {
             isLoading = true
-            items = try await apiClient
-                .fetchGithubRepo(url: APIUrl.githubRepo(query: searchText))
-                .items
+            do {
+                items = try await apiClient
+                    .fetchGithubRepo(
+                        url: APIUrl.githubRepo(query: searchText))
+                    .items
+            } catch let error {
+                if let apiError = error as? APIError {
+                    alertMessage = apiError.message
+                    isShowAlert.toggle()
+                }
+            }
             isLoading = false
         }
     }
