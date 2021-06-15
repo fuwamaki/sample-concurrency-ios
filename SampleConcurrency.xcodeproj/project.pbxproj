@@ -17,6 +17,8 @@
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
 		20719541267961D800B497B0 /* QiitaTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719540267961D800B497B0 /* QiitaTag.swift */; };
 		20719543267962E600B497B0 /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719542267962E600B497B0 /* QiitaItem.swift */; };
+		207195452679655700B497B0 /* GithubDoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207195442679655700B497B0 /* GithubDoubleView.swift */; };
+		20719547267966B000B497B0 /* GithubSquareItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719546267966B000B497B0 /* GithubSquareItemView.swift */; };
 		208D6E8626742676008696B4 /* GithubItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D6E8526742676008696B4 /* GithubItemView.swift */; };
 		208D6E8826749A70008696B4 /* GithubTempItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208D6E8726749A70008696B4 /* GithubTempItemView.swift */; };
 		20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C895DC2672E7C0001AA1DE /* GithubRepoList.swift */; };
@@ -60,6 +62,8 @@
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
 		20719540267961D800B497B0 /* QiitaTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTag.swift; sourceTree = "<group>"; };
 		20719542267962E600B497B0 /* QiitaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
+		207195442679655700B497B0 /* GithubDoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDoubleView.swift; sourceTree = "<group>"; };
+		20719546267966B000B497B0 /* GithubSquareItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubSquareItemView.swift; sourceTree = "<group>"; };
 		208D6E8526742676008696B4 /* GithubItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubItemView.swift; sourceTree = "<group>"; };
 		208D6E8726749A70008696B4 /* GithubTempItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubTempItemView.swift; sourceTree = "<group>"; };
 		20C895DC2672E7C0001AA1DE /* GithubRepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRepoList.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 			children = (
 				208D6E8526742676008696B4 /* GithubItemView.swift */,
 				208D6E8726749A70008696B4 /* GithubTempItemView.swift */,
+				20719546267966B000B497B0 /* GithubSquareItemView.swift */,
 			);
 			path = ViewComponents;
 			sourceTree = "<group>";
@@ -202,6 +207,7 @@
 			children = (
 				20F53E45267115D6007C80EA /* QiitaView.swift */,
 				20F53E472671162F007C80EA /* GithubView.swift */,
+				207195442679655700B497B0 /* GithubDoubleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -346,8 +352,10 @@
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
 				20719541267961D800B497B0 /* QiitaTag.swift in Sources */,
 				20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */,
+				207195452679655700B497B0 /* GithubDoubleView.swift in Sources */,
 				20F53E46267115D6007C80EA /* QiitaView.swift in Sources */,
 				20C895E62672E995001AA1DE /* APIUrl.swift in Sources */,
+				20719547267966B000B497B0 /* GithubSquareItemView.swift in Sources */,
 				208D6E8826749A70008696B4 /* GithubTempItemView.swift in Sources */,
 				2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */,
 				20F53E482671162F007C80EA /* GithubView.swift in Sources */,

@@ -27,6 +27,10 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "chevron.left.forwardslash.chevron.right")
                 }
+            GithubDoubleView()
+                .tabItem {
+                    Image(systemName: "network")
+                }
         }
 //        List {
 //            ForEach(items) { item in
