@@ -9,6 +9,34 @@ import Foundation
 
 final class APIClient {
 
+    func fetchQiitaTag(url: URL) async throws -> [QiitaTag] {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+                  throw APIError.unknownError
+              }
+        do {
+            let list = try JSONDecoder().decode([QiitaTag].self, from: data)
+            return list
+        } catch {
+            throw APIError.jsonParseError
+        }
+    }
+
+    func fetchQiitaItem(url: URL) async throws -> [QiitaItem] {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+                  throw APIError.unknownError
+              }
+        do {
+            let list = try JSONDecoder().decode([QiitaItem].self, from: data)
+            return list
+        } catch {
+            throw APIError.jsonParseError
+        }
+    }
+
     func fetchGithubRepo(url: URL) async throws -> GithubRepoList {
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse,
