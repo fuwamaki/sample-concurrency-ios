@@ -26,10 +26,12 @@ struct ContentView: View {
             GithubView()
                 .tabItem {
                     Image(systemName: "chevron.left.forwardslash.chevron.right")
+                    Text("repository")
                 }
             GithubDoubleView()
                 .tabItem {
-                    Image(systemName: "network")
+                    Image(systemName: "chevron.left.forwardslash.chevron.right")
+                    Text("repositories")
                 }
         }
 //        List {
