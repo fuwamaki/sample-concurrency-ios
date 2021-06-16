@@ -7,10 +7,14 @@
 
 import SwiftUI
 
+struct GithubDouble: Identifiable {
+    var id: String
+    let list: [GithubRepo]
+}
+
 struct GithubDoubleView: View {
     private var apiClient = APIClient()
-    @State var firstItems: [GithubRepo] = []
-    @State var secondItems: [GithubRepo] = []
+    @State var items: [GithubDouble] = []
     @State var isLoading: Bool = false
     @State var isShowAlert: Bool = false
     @State var alertMessage: String = ""
@@ -18,24 +22,23 @@ struct GithubDoubleView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                VStack {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            ForEach(firstItems) { item in
-                                GithubSquareItemView(repo: item)
-                            }
-                        }
-                    }
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(spacing: 20) {
-                            ForEach(secondItems) { item in
-                                GithubSquareItemView(repo: item)
+                VStack(alignment: .leading) {
+                    ForEach(items) { item in
+                        Text(item.id)
+                            .font(.title3)
+                            .padding(.top, 2)
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 20) {
+                                ForEach(item.list) { repo in
+                                    GithubSquareItemView(repo: repo)
+                                }
                             }
                         }
                     }
                     Spacer()
                 }
-                .background(Color(UIColor.systemGray6))
+                .padding()
+                .frame(width: UIScreen.main.bounds.width)
                 if isLoading {
                     ProgressView()
                         .scaleEffect(1.5, anchor: .center)
@@ -43,6 +46,7 @@ struct GithubDoubleView: View {
                 }
             }
             .navigationTitle(Text("Github Repositories"))
+            .background(Color(UIColor.systemGray6))
         }
         .alert(isPresented: $isShowAlert) {
             Alert(
@@ -56,17 +60,20 @@ struct GithubDoubleView: View {
     }
 
     private func fetch() {
+        guard items.isEmpty else { return }
         async {
             isLoading = true
             do {
-                firstItems = try await apiClient
+                let firstItems = try await apiClient
                     .fetchGithubRepo(
                         url: APIUrl.githubRepo(query: "swift"))
                     .items
-                secondItems = try await apiClient
+                items.append(GithubDouble(id: "swift", list: firstItems))
+                let secondItems = try await apiClient
                     .fetchGithubRepo(
                         url: APIUrl.githubRepo(query: "kotlin"))
                     .items
+                items.append(GithubDouble(id: "kotlin", list: secondItems))
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message
