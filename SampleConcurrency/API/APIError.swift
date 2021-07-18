@@ -9,9 +9,7 @@ import Foundation
 
 enum APIError: Error {
     case customError(message: String)
-    case nonDataError
     case unauthorizedError
-    case notFoundError
     case maintenanceError
     case networkError
     case jsonParseError
@@ -21,16 +19,12 @@ enum APIError: Error {
         switch self {
         case .customError(let message):
             return message
-        case .nonDataError:
-            return "nonDataError"
         case .unauthorizedError:
-            return "unauthorizedError"
-        case .notFoundError:
-            return "notFoundError"
+            return "ユーザーセッションの有効期限が切れたため、再度ログインしてください。"
         case .maintenanceError:
-            return "maintenanceError"
+            return "メンテナンス中です。終了までしばらくお待ちください。"
         case .networkError:
-            return "networkError"
+            return "通信エラーが発生しました。電波の良い所で再度お試しください。"
         case .jsonParseError:
             return "申し訳ありません、データが見つかりませんでした。"
         default:
