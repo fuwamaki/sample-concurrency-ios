@@ -30,7 +30,7 @@ struct ContentView: View {
                 }
             GithubDoubleView()
                 .tabItem {
-                    Image(systemName: "chevron.left.forwardslash.chevron.right")
+                    Image(systemName: "list.bullet")
                     Text("repositories")
                 }
         }
