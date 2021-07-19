@@ -15,6 +15,7 @@
 		2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2005075D2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld */; };
 		200507692671131B009D7EE0 /* SampleConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */; };
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
+		2068954726A420DA00D6F0AC /* QiitaTempItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */; };
 		20719541267961D800B497B0 /* QiitaTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719540267961D800B497B0 /* QiitaTag.swift */; };
 		20719543267962E600B497B0 /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719542267962E600B497B0 /* QiitaItem.swift */; };
 		207195452679655700B497B0 /* GithubDoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207195442679655700B497B0 /* GithubDoubleView.swift */; };
@@ -62,6 +63,7 @@
 		200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyTests.swift; sourceTree = "<group>"; };
 		2005076E2671131B009D7EE0 /* SampleConcurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleConcurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
+		2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTempItemView.swift; sourceTree = "<group>"; };
 		20719540267961D800B497B0 /* QiitaTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTag.swift; sourceTree = "<group>"; };
 		20719542267962E600B497B0 /* QiitaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
 		207195442679655700B497B0 /* GithubDoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDoubleView.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		208D6E8426742660008696B4 /* ViewComponents */ = {
 			isa = PBXGroup;
 			children = (
+				2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */,
 				208D6E8526742676008696B4 /* GithubItemView.swift */,
 				208D6E8726749A70008696B4 /* GithubTempItemView.swift */,
 				20719546267966B000B497B0 /* GithubSquareItemView.swift */,
@@ -352,6 +355,7 @@
 				2071954B2679B3D400B497B0 /* QiitaItemTag.swift in Sources */,
 				2005075C2671131B009D7EE0 /* Persistence.swift in Sources */,
 				20719543267962E600B497B0 /* QiitaItem.swift in Sources */,
+				2068954726A420DA00D6F0AC /* QiitaTempItemView.swift in Sources */,
 				20F53E4A26718F4A007C80EA /* APIClient.swift in Sources */,
 				20C895E12672E7EE001AA1DE /* GithubRepoOwner.swift in Sources */,
 				208D6E8626742676008696B4 /* GithubItemView.swift in Sources */,

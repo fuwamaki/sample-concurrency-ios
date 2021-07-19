@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct QiitaItem: Codable {
+struct QiitaItem: Codable, Identifiable {
     let id: String
     let title: String
     let url: String
@@ -15,7 +15,7 @@ struct QiitaItem: Codable {
     let likesCount: Int
     let reactionsCount: Int
     let tags: [QiitaItemTag]
-    let user: [QiitaItemUser]
+    let user: QiitaItemUser
     let createdAt: String
     let updatedAt: String
 

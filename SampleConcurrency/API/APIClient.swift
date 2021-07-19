@@ -32,7 +32,8 @@ final class APIClient {
         do {
             let list = try JSONDecoder().decode([QiitaItem].self, from: data)
             return list
-        } catch {
+        } catch let error {
+            print(error)
             throw APIError.jsonParseError
         }
     }

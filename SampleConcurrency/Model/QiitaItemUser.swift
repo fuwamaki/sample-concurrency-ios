@@ -10,7 +10,7 @@ import Foundation
 struct QiitaItemUser: Codable {
     let id: String
     let name: String
-    let description: String
+    let description: String?
     let profileImageUrl: String
     let followeesCount: Int
     let followersCount: Int
