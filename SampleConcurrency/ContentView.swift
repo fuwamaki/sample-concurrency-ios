@@ -24,12 +24,12 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-            QiitaTagItemView()
+            QiitaTagView()
                 .tabItem {
                     Image(systemName: "tag")
                     Text("TagItems")
                 }
-            GithubDoubleView()
+            DoubleView()
                 .tabItem {
                     Image(systemName: "list.bullet")
                     Text("Repositories")

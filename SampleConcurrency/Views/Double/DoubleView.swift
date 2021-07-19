@@ -1,5 +1,5 @@
 //
-//  GithubDoubleView.swift
+//  DoubleView.swift
 //  SampleConcurrency
 //
 //  Created by yusaku maki on 2021/06/16.
@@ -12,7 +12,7 @@ struct GithubDouble: Identifiable {
     let list: [GithubRepo]
 }
 
-struct GithubDoubleView: View {
+struct DoubleView: View {
     private var apiClient = APIClient()
     @State var items: [GithubDouble] = []
     @State var isLoading: Bool = false
@@ -81,8 +81,8 @@ struct GithubDoubleView: View {
     }
 }
 
-struct GithubDoubleView_Previews: PreviewProvider {
+struct DoubleView_Previews: PreviewProvider {
     static var previews: some View {
-        GithubDoubleView()
+        DoubleView()
     }
 }
