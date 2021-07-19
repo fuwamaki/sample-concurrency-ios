@@ -11,6 +11,10 @@ import SwiftUI
 struct SampleConcurrencyApp: App {
     let persistenceController = PersistenceController.shared
 
+    init() {
+        UITableView.appearance().backgroundColor = UIColor.systemBackground
+    }
+
     var body: some Scene {
         WindowGroup {
             ContentView()

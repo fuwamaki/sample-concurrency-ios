@@ -19,11 +19,11 @@ struct ContentView: View {
 
     var body: some View {
         TabView{
-            QiitaView()
+            SingleView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
-            GithubView()
+            SingleView()
                 .tabItem {
                     Image(systemName: "chevron.left.forwardslash.chevron.right")
                     Text("repository")

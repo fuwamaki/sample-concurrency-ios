@@ -16,6 +16,7 @@
 		200507692671131B009D7EE0 /* SampleConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507682671131B009D7EE0 /* SampleConcurrencyTests.swift */; };
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
 		2068954726A420DA00D6F0AC /* QiitaTempItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */; };
+		2068954926A502B300D6F0AC /* SingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954826A502B300D6F0AC /* SingleView.swift */; };
 		20719541267961D800B497B0 /* QiitaTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719540267961D800B497B0 /* QiitaTag.swift */; };
 		20719543267962E600B497B0 /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719542267962E600B497B0 /* QiitaItem.swift */; };
 		207195452679655700B497B0 /* GithubDoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207195442679655700B497B0 /* GithubDoubleView.swift */; };
@@ -64,6 +65,7 @@
 		2005076E2671131B009D7EE0 /* SampleConcurrencyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SampleConcurrencyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
 		2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTempItemView.swift; sourceTree = "<group>"; };
+		2068954826A502B300D6F0AC /* SingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
 		20719540267961D800B497B0 /* QiitaTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTag.swift; sourceTree = "<group>"; };
 		20719542267962E600B497B0 /* QiitaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
 		207195442679655700B497B0 /* GithubDoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDoubleView.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		20F53E42267115AD007C80EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2068954826A502B300D6F0AC /* SingleView.swift */,
 				20F53E45267115D6007C80EA /* QiitaView.swift */,
 				20F53E472671162F007C80EA /* GithubView.swift */,
 				207195442679655700B497B0 /* GithubDoubleView.swift */,
@@ -361,6 +364,7 @@
 				208D6E8626742676008696B4 /* GithubItemView.swift in Sources */,
 				20C895DF2672E7DC001AA1DE /* GithubRepo.swift in Sources */,
 				2005075526711319009D7EE0 /* ContentView.swift in Sources */,
+				2068954926A502B300D6F0AC /* SingleView.swift in Sources */,
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
 				20719541267961D800B497B0 /* QiitaTag.swift in Sources */,
 				20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */,

@@ -8,30 +8,32 @@
 import SwiftUI
 
 struct GithubView: View {
-    private var apiClient = APIClient()
-    @State var searchText: String = ""
+    @Binding var selectedType: SingleItemType
+    @Binding var searchText: String
+    @Binding var isSearching: Bool
+
+    private let apiClient = APIClient()
     @State var items: [GithubRepo] = []
-    @State var isLoading: Bool = false
-    @State var isShowAlert: Bool = false
-    @State var alertMessage: String = ""
+    @State private var isLoading: Bool = false
+    @State private var isShowAlert: Bool = false
+    @State private var alertMessage: String = ""
+    @State private var searchedText: String = ""
 
     var body: some View {
-        NavigationView {
-            ZStack {
-                List(items) { item in
-                    GithubTempItemView(repo: item)
-                }
-                if isLoading {
-                    ProgressView()
-                        .scaleEffect(1.5, anchor: .center)
-                        .tint(.cyan)
-                }
+        ZStack {
+            List(items) { item in
+                GithubTempItemView(repo: item)
             }
-            .navigationTitle(Text("Github Repository"))
+            if isLoading {
+                ProgressView()
+                    .scaleEffect(1.5, anchor: .center)
+                    .tint(.cyan)
+            }
         }
-        .searchable(text: $searchText)
-        .onSubmit(of: .search, {
-            fetch()
+        .onChange(of: isSearching, perform: { newValue in
+            if newValue, selectedType == .github {
+                fetch()
+            }
         })
         .alert(isPresented: $isShowAlert) {
             Alert(
@@ -39,10 +41,13 @@ struct GithubView: View {
                 message: Text(alertMessage),
                 dismissButton: .default(Text("OK")))
         }
+        .onAppear {
+            fetch()
+        }
     }
 
-    private func fetch() {
-        guard searchText.count > 0 else { return }
+    func fetch() {
+        guard searchText.count > 0, searchedText != searchText else { return }
         async {
             isLoading = true
             do {
@@ -50,6 +55,7 @@ struct GithubView: View {
                     .fetchGithubRepo(
                         url: APIUrl.githubRepo(query: searchText))
                     .items
+                searchedText = searchText
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message
@@ -63,6 +69,9 @@ struct GithubView: View {
 
 struct GithubView_Previews: PreviewProvider {
     static var previews: some View {
-        GithubView()
+        GithubView(
+            selectedType: .constant(.github),
+            searchText: .constant(""),
+            isSearching: .constant(false))
     }
 }
