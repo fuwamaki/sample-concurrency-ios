@@ -13,8 +13,8 @@ struct GithubDouble: Identifiable {
 }
 
 struct DoubleView: View {
-    private var apiClient = APIClient()
-    @State var items: [GithubDouble] = []
+    @ObservedObject private var viewModel = DoubleViewModel()
+
     @State var isLoading: Bool = false
     @State var isShowAlert: Bool = false
     @State var alertMessage: String = ""
@@ -23,7 +23,7 @@ struct DoubleView: View {
         NavigationView {
             ZStack {
                 VStack(alignment: .leading) {
-                    ForEach(items) { item in
+                    ForEach(viewModel.repoItems) { item in
                         Text(item.id)
                             .font(.title3)
                             .padding(.top, 2)
@@ -60,16 +60,11 @@ struct DoubleView: View {
     }
 
     private func fetch() {
-        guard items.isEmpty else { return }
         async {
-            isLoading = true
             do {
-                let firstItems: GithubRepoList = try await apiClient
-                    .call(url: APIUrl.githubRepo(query: "swift"))
-                items.append(GithubDouble(id: "swift", list: firstItems.items))
-                let secondItems: GithubRepoList = try await apiClient
-                    .call(url: APIUrl.githubRepo(query: "kotlin"))
-                items.append(GithubDouble(id: "kotlin", list: secondItems.items))
+                isLoading = true
+                try await viewModel.fetchSwift()
+                try await viewModel.fetchKotlin()
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message

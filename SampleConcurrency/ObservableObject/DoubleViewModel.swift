@@ -7,14 +7,35 @@
 
 import SwiftUI
 
-struct DoubleViewModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+class DoubleViewModel: ObservableObject {
+    @Published var swiftGithubRepos: [GithubRepo] = []
+    @Published var kotlinGithubRepos: [GithubRepo] = []
+
+    var repoItems: [GithubDouble] {
+        var items: [GithubDouble] = []
+        if swiftGithubRepos.count > 0 {
+            items.append(GithubDouble(id: "swift", list: swiftGithubRepos))
+        }
+        if kotlinGithubRepos.count > 0 {
+            items.append(GithubDouble(id: "kotlin", list: kotlinGithubRepos))
+        }
+        return items
     }
+
+    private var apiClient = APIClient()
 }
 
-struct DoubleViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        DoubleViewModel()
+// API
+extension DoubleViewModel {
+    func fetchSwift() async throws {
+        let list: GithubRepoList = try await apiClient
+            .call(url: APIUrl.githubRepo(query: "swift"))
+        swiftGithubRepos = list.items
+    }
+
+    func fetchKotlin() async throws {
+        let list: GithubRepoList = try await apiClient
+            .call(url: APIUrl.githubRepo(query: "kotlin"))
+        kotlinGithubRepos = list.items
     }
 }
