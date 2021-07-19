@@ -17,6 +17,8 @@
 		200507732671131B009D7EE0 /* SampleConcurrencyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */; };
 		2068954726A420DA00D6F0AC /* QiitaTempItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */; };
 		2068954926A502B300D6F0AC /* SingleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954826A502B300D6F0AC /* SingleView.swift */; };
+		2068954C26A518F000D6F0AC /* SingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954B26A518F000D6F0AC /* SingleViewModel.swift */; };
+		2068954F26A51AA100D6F0AC /* SingleItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068954E26A51AA100D6F0AC /* SingleItemType.swift */; };
 		20719541267961D800B497B0 /* QiitaTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719540267961D800B497B0 /* QiitaTag.swift */; };
 		20719543267962E600B497B0 /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719542267962E600B497B0 /* QiitaItem.swift */; };
 		207195452679655700B497B0 /* GithubDoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207195442679655700B497B0 /* GithubDoubleView.swift */; };
@@ -66,6 +68,8 @@
 		200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleConcurrencyUITests.swift; sourceTree = "<group>"; };
 		2068954626A420DA00D6F0AC /* QiitaTempItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTempItemView.swift; sourceTree = "<group>"; };
 		2068954826A502B300D6F0AC /* SingleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleView.swift; sourceTree = "<group>"; };
+		2068954B26A518F000D6F0AC /* SingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewModel.swift; sourceTree = "<group>"; };
+		2068954E26A51AA100D6F0AC /* SingleItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemType.swift; sourceTree = "<group>"; };
 		20719540267961D800B497B0 /* QiitaTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTag.swift; sourceTree = "<group>"; };
 		20719542267962E600B497B0 /* QiitaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
 		207195442679655700B497B0 /* GithubDoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubDoubleView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,8 @@
 				2005075B2671131B009D7EE0 /* Persistence.swift */,
 				20F53E42267115AD007C80EA /* Views */,
 				208D6E8426742660008696B4 /* ViewComponents */,
+				2068954A26A518DF00D6F0AC /* ObservableObject */,
+				2068954D26A51A9900D6F0AC /* Enum */,
 				20C895DB2672E7A6001AA1DE /* Model */,
 				20C895E22672E7FE001AA1DE /* API */,
 				20F53E412671153A007C80EA /* Resources */,
@@ -168,6 +174,22 @@
 				200507722671131B009D7EE0 /* SampleConcurrencyUITests.swift */,
 			);
 			path = SampleConcurrencyUITests;
+			sourceTree = "<group>";
+		};
+		2068954A26A518DF00D6F0AC /* ObservableObject */ = {
+			isa = PBXGroup;
+			children = (
+				2068954B26A518F000D6F0AC /* SingleViewModel.swift */,
+			);
+			path = ObservableObject;
+			sourceTree = "<group>";
+		};
+		2068954D26A51A9900D6F0AC /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				2068954E26A51AA100D6F0AC /* SingleItemType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 		208D6E8426742660008696B4 /* ViewComponents */ = {
@@ -364,10 +386,12 @@
 				208D6E8626742676008696B4 /* GithubItemView.swift in Sources */,
 				20C895DF2672E7DC001AA1DE /* GithubRepo.swift in Sources */,
 				2005075526711319009D7EE0 /* ContentView.swift in Sources */,
+				2068954F26A51AA100D6F0AC /* SingleItemType.swift in Sources */,
 				2068954926A502B300D6F0AC /* SingleView.swift in Sources */,
 				2005075326711319009D7EE0 /* SampleConcurrencyApp.swift in Sources */,
 				20719541267961D800B497B0 /* QiitaTag.swift in Sources */,
 				20C895DD2672E7C0001AA1DE /* GithubRepoList.swift in Sources */,
+				2068954C26A518F000D6F0AC /* SingleViewModel.swift in Sources */,
 				207195452679655700B497B0 /* GithubDoubleView.swift in Sources */,
 				20F53E46267115D6007C80EA /* QiitaView.swift in Sources */,
 				20C895E62672E995001AA1DE /* APIUrl.swift in Sources */,

@@ -7,30 +7,8 @@
 
 import SwiftUI
 
-enum SingleItemType: Int {
-    case github = 0
-    case qiita = 1
-
-    var title: String {
-        switch self {
-        case .github:
-            return "Github Repository"
-        case .qiita:
-            return "Qiita Item"
-        }
-    }
-
-    var text: String {
-        switch self {
-        case .github:
-            return "Github"
-        case .qiita:
-            return "Qiita"
-        }
-    }
-}
-
 struct SingleView: View {
+    @ObservedObject private var viewModel = SingleViewModel()
     @State private var selectedType: SingleItemType = .github
     @State private var searchText: String = ""
     @State private var isSearching: Bool = false
@@ -53,21 +31,14 @@ struct SingleView: View {
                         searchText: $searchText,
                         isSearching: $isSearching)
                 case .qiita:
-                    QiitaView(
-                        selectedType: $selectedType,
-                        searchText: $searchText,
-                        isSearching: $isSearching)
+                    QiitaView(viewModel: viewModel)
                 }
             }
             .navigationTitle(Text(selectedType.title))
         }
         .searchable(text: $searchText)
         .onSubmit(of: .search, {
-            guard searchText.count > 0 else { return }
-            isSearching = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                isSearching = false
-            }
+            viewModel.searchText = searchText
         })
     }
 }
