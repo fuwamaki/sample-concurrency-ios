@@ -8,20 +8,15 @@
 import SwiftUI
 
 struct GithubView: View {
-    @Binding var selectedType: SingleItemType
-    @Binding var searchText: String
-    @Binding var isSearching: Bool
+    @ObservedObject var viewModel: SingleViewModel
 
-    private let apiClient = APIClient()
-    @State var items: [GithubRepo] = []
     @State private var isLoading: Bool = false
     @State private var isShowAlert: Bool = false
     @State private var alertMessage: String = ""
-    @State private var searchedText: String = ""
 
     var body: some View {
         ZStack {
-            List(items) { item in
+            List(viewModel.githubRepos) { item in
                 GithubTempItemView(repo: item)
             }
             if isLoading {
@@ -30,32 +25,22 @@ struct GithubView: View {
                     .tint(.cyan)
             }
         }
-        .onChange(of: isSearching, perform: { newValue in
-            if newValue, selectedType == .github {
-                fetch()
-            }
-        })
         .alert(isPresented: $isShowAlert) {
             Alert(
                 title: Text("エラー"),
                 message: Text(alertMessage),
                 dismissButton: .default(Text("OK")))
         }
-        .onAppear {
-            fetch()
+        .onReceive(viewModel.$searchText) { text in
+            fetch(text)
         }
     }
 
-    func fetch() {
-        guard searchText.count > 0, searchedText != searchText else { return }
+    func fetch(_ text: String) {
         async {
             isLoading = true
             do {
-                items = try await apiClient
-                    .fetchGithubRepo(
-                        url: APIUrl.githubRepo(query: searchText))
-                    .items
-                searchedText = searchText
+                try await viewModel.fetchGithubRepo(text: text)
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message
@@ -69,9 +54,6 @@ struct GithubView: View {
 
 struct GithubView_Previews: PreviewProvider {
     static var previews: some View {
-        GithubView(
-            selectedType: .constant(.github),
-            searchText: .constant(""),
-            isSearching: .constant(false))
+        GithubView(viewModel: SingleViewModel())
     }
 }

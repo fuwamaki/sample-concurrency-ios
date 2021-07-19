@@ -26,10 +26,7 @@ struct SingleView: View {
                 .padding(.horizontal, 16.0)
                 switch selectedType {
                 case .github:
-                    GithubView(
-                        selectedType: $selectedType,
-                        searchText: $searchText,
-                        isSearching: $isSearching)
+                    GithubView(viewModel: viewModel)
                 case .qiita:
                     QiitaView(viewModel: viewModel)
                 }
