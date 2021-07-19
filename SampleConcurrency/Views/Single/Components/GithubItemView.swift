@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// memo: AsyncImageが正常に機能しないので、現状未使用。
 struct GithubItemView: View {
     var repo: GithubRepo
 

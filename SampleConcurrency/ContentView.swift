@@ -24,7 +24,7 @@ struct ContentView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-            SingleView()
+            QiitaTagItemView()
                 .tabItem {
                     Image(systemName: "tag")
                     Text("TagItems")
