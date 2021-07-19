@@ -22,16 +22,16 @@ class SingleViewModel: ObservableObject {
 extension SingleViewModel {
     func fetchGithubRepo(text: String) async throws {
         guard text.count > 0, githubQuery != text else { return }
-        githubRepos = try await apiClient
-            .fetchGithubRepo(url: APIUrl.githubRepo(query: text))
-            .items
+        let list: GithubRepoList = try await apiClient
+            .call(url: APIUrl.githubRepo(query: text))
+        githubRepos = list.items
         githubQuery = text
     }
 
     func fetchQiitaItem(text: String) async throws {
         guard text.count > 0, qiitaQuery != text else { return }
         qiitaItems = try await apiClient
-            .fetchQiitaItem(url: APIUrl.qiitaItem(query: text))
+            .call(url: APIUrl.qiitaItem(query: text))
         qiitaQuery = text
     }
 }

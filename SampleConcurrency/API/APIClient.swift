@@ -23,36 +23,6 @@ final class APIClient {
         }
     }
 
-    func fetchQiitaItem(url: URL) async throws -> [QiitaItem] {
-        print(url.absoluteString)
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-                  throw APIError.unknownError
-              }
-        do {
-            let list = try JSONDecoder().decode([QiitaItem].self, from: data)
-            return list
-        } catch let error {
-            print(error)
-            throw APIError.jsonParseError
-        }
-    }
-
-    func fetchGithubRepo(url: URL) async throws -> GithubRepoList {
-        let (data, response) = try await URLSession.shared.data(from: url)
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-                  throw APIError.unknownError
-              }
-        do {
-            let list = try JSONDecoder().decode(GithubRepoList.self, from: data)
-            return list
-        } catch {
-            throw APIError.jsonParseError
-        }
-    }
-
     func fetchImageData(url: URL) async throws -> Data {
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse,
@@ -60,5 +30,18 @@ final class APIClient {
                   throw APIError.unknownError
               }
         return data
+    }
+
+    func call<T: Codable>(url: URL) async throws -> T {
+        let (data, response) = try await URLSession.shared.data(from: url)
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 else {
+                  throw APIError.unknownError
+              }
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            throw APIError.jsonParseError
+        }
     }
 }

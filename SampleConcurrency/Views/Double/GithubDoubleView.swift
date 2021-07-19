@@ -64,16 +64,12 @@ struct GithubDoubleView: View {
         async {
             isLoading = true
             do {
-                let firstItems = try await apiClient
-                    .fetchGithubRepo(
-                        url: APIUrl.githubRepo(query: "swift"))
-                    .items
-                items.append(GithubDouble(id: "swift", list: firstItems))
-                let secondItems = try await apiClient
-                    .fetchGithubRepo(
-                        url: APIUrl.githubRepo(query: "kotlin"))
-                    .items
-                items.append(GithubDouble(id: "kotlin", list: secondItems))
+                let firstItems: GithubRepoList = try await apiClient
+                    .call(url: APIUrl.githubRepo(query: "swift"))
+                items.append(GithubDouble(id: "swift", list: firstItems.items))
+                let secondItems: GithubRepoList = try await apiClient
+                    .call(url: APIUrl.githubRepo(query: "kotlin"))
+                items.append(GithubDouble(id: "kotlin", list: secondItems.items))
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message
