@@ -63,8 +63,7 @@ struct DoubleView: View {
         async {
             do {
                 isLoading = true
-                try await viewModel.fetchSwift()
-                try await viewModel.fetchKotlin()
+                try await viewModel.fetch()
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message

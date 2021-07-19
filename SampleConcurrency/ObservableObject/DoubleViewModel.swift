@@ -27,15 +27,13 @@ class DoubleViewModel: ObservableObject {
 
 // API
 extension DoubleViewModel {
-    func fetchSwift() async throws {
-        let list: GithubRepoList = try await apiClient
+    func fetch() async throws {
+        async let swiftList: GithubRepoList = apiClient
             .call(url: APIUrl.githubRepo(query: "swift"))
-        swiftGithubRepos = list.items
-    }
-
-    func fetchKotlin() async throws {
-        let list: GithubRepoList = try await apiClient
+        async let kotlinList: GithubRepoList = apiClient
             .call(url: APIUrl.githubRepo(query: "kotlin"))
-        kotlinGithubRepos = list.items
+        let list = try await [swiftList, kotlinList]
+        swiftGithubRepos = list[0].items
+        kotlinGithubRepos = list[1].items
     }
 }
