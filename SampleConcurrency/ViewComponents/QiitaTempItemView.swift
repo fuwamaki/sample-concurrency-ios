@@ -28,6 +28,7 @@ struct QiitaTempItemView: View {
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.title)
                     .font(.body)
+                    .frame(height: 48)
                 Label(String(item.likesCount),
                       systemImage: "star")
                     .font(.subheadline)
