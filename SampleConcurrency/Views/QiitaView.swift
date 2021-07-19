@@ -19,6 +19,7 @@ struct QiitaView: View {
             List(viewModel.qiitaItems) { item in
                 QiitaTempItemView(item: item)
             }
+            .listStyle(.plain)
             if isLoading {
                 ProgressView()
                     .scaleEffect(1.5, anchor: .center)

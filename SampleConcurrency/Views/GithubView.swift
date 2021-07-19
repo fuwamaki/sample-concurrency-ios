@@ -19,6 +19,7 @@ struct GithubView: View {
             List(viewModel.githubRepos) { item in
                 GithubTempItemView(repo: item)
             }
+            .listStyle(.plain)
             if isLoading {
                 ProgressView()
                     .scaleEffect(1.5, anchor: .center)
