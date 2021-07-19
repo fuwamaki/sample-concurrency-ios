@@ -22,16 +22,17 @@ struct ContentView: View {
             SingleView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
+                    Text("Search")
                 }
             SingleView()
                 .tabItem {
-                    Image(systemName: "chevron.left.forwardslash.chevron.right")
-                    Text("repository")
+                    Image(systemName: "tag")
+                    Text("TagItems")
                 }
             GithubDoubleView()
                 .tabItem {
                     Image(systemName: "list.bullet")
-                    Text("repositories")
+                    Text("Repositories")
                 }
         }
 //        List {
