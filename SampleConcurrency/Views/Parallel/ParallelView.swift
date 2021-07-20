@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ParallelView: View {
-    @ObservedObject private var viewModel = DoubleViewModel()
+    @ObservedObject private var viewModel = ParallelViewModel()
     @ObservedObject var alertSubject: AlertSubject = AlertSubject()
 
     var body: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SerialView: View {
-    @ObservedObject private var viewModel = QiitaTagViewModel()
+    @ObservedObject private var viewModel = SerialViewModel()
     @ObservedObject var alertSubject: AlertSubject = AlertSubject()
 
     var body: some View {

@@ -1,5 +1,5 @@
 //
-//  DoubleViewModel.swift
+//  ParallelViewModel.swift
 //  SampleConcurrency
 //
 //  Created by yusaku maki on 2021/07/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class DoubleViewModel: ObservableObject {
+class ParallelViewModel: ObservableObject {
     @Published var swiftGithubRepos: [GithubRepo] = []
     @Published var kotlinGithubRepos: [GithubRepo] = []
     @Published var qiitaItems: [QiitaItem] = []
@@ -28,7 +28,7 @@ class DoubleViewModel: ObservableObject {
 }
 
 // API
-extension DoubleViewModel {
+extension ParallelViewModel {
     func fetch() async throws {
         isLoading = true
         async let swiftList: GithubRepoList = apiClient

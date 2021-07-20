@@ -1,5 +1,5 @@
 //
-//  QiitaTagViewModel.swift
+//  SerialViewModel.swift
 //  SampleConcurrency
 //
 //  Created by yusaku maki on 2021/07/19.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-class QiitaTagViewModel: ObservableObject {
+class SerialViewModel: ObservableObject {
     @Published var githubRepos: [GithubRepo] = []
     @Published var qiitaItems: [QiitaItem] = []
     @Published var searchText: String = ""
@@ -21,7 +21,7 @@ class QiitaTagViewModel: ObservableObject {
 }
 
 // API
-extension QiitaTagViewModel {
+extension SerialViewModel {
     func fetch() async throws {
         isLoading = true
         let qiitaTags: [QiitaTag] = try await apiClient.call(url: APIUrl.qiitaTag)
