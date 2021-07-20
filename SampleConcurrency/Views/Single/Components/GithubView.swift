@@ -9,10 +9,8 @@ import SwiftUI
 
 struct GithubView: View {
     @ObservedObject var viewModel: SingleViewModel
-
+    @StateObject var alertSubject: AlertSubject = AlertSubject()
     @State private var isLoading: Bool = false
-    @State private var isShowAlert: Bool = false
-    @State private var alertMessage: String = ""
 
     var body: some View {
         ZStack {
@@ -26,11 +24,8 @@ struct GithubView: View {
                     .tint(.cyan)
             }
         }
-        .alert(isPresented: $isShowAlert) {
-            Alert(
-                title: Text("エラー"),
-                message: Text(alertMessage),
-                dismissButton: .default(Text("OK")))
+        .alert(isPresented: $alertSubject.isShow) {
+            alertSubject.alert
         }
         .onReceive(viewModel.$searchText) { text in
             fetch(text)
@@ -44,8 +39,7 @@ struct GithubView: View {
                 try await viewModel.fetchGithubRepo(text: text)
             } catch let error {
                 if let apiError = error as? APIError {
-                    alertMessage = apiError.message
-                    isShowAlert.toggle()
+                    self.alertSubject.show(message: apiError.message)
                 }
             }
             isLoading = false

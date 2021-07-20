@@ -22,6 +22,7 @@
 		2068955826A58A0E00D6F0AC /* QiitaTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955726A58A0E00D6F0AC /* QiitaTagView.swift */; };
 		2068955A26A59D9000D6F0AC /* QiitaTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955926A59D9000D6F0AC /* QiitaTagViewModel.swift */; };
 		2068955C26A59D9B00D6F0AC /* DoubleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955B26A59D9B00D6F0AC /* DoubleViewModel.swift */; };
+		2068956026A6512B00D6F0AC /* AlertSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955F26A6512B00D6F0AC /* AlertSubject.swift */; };
 		20719541267961D800B497B0 /* QiitaTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719540267961D800B497B0 /* QiitaTag.swift */; };
 		20719543267962E600B497B0 /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719542267962E600B497B0 /* QiitaItem.swift */; };
 		207195452679655700B497B0 /* DoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207195442679655700B497B0 /* DoubleView.swift */; };
@@ -76,6 +77,7 @@
 		2068955726A58A0E00D6F0AC /* QiitaTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTagView.swift; sourceTree = "<group>"; };
 		2068955926A59D9000D6F0AC /* QiitaTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTagViewModel.swift; sourceTree = "<group>"; };
 		2068955B26A59D9B00D6F0AC /* DoubleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleViewModel.swift; sourceTree = "<group>"; };
+		2068955F26A6512B00D6F0AC /* AlertSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSubject.swift; sourceTree = "<group>"; };
 		20719540267961D800B497B0 /* QiitaTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTag.swift; sourceTree = "<group>"; };
 		20719542267962E600B497B0 /* QiitaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
 		207195442679655700B497B0 /* DoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleView.swift; sourceTree = "<group>"; };
@@ -184,9 +186,8 @@
 		2068954A26A518DF00D6F0AC /* ObservableObject */ = {
 			isa = PBXGroup;
 			children = (
-				2068954B26A518F000D6F0AC /* SingleViewModel.swift */,
-				2068955926A59D9000D6F0AC /* QiitaTagViewModel.swift */,
-				2068955B26A59D9B00D6F0AC /* DoubleViewModel.swift */,
+				2068955E26A6511400D6F0AC /* Subject */,
+				2068955D26A6510F00D6F0AC /* ViewModel */,
 			);
 			path = ObservableObject;
 			sourceTree = "<group>";
@@ -243,6 +244,24 @@
 				20719546267966B000B497B0 /* GithubSquareItemView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		2068955D26A6510F00D6F0AC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2068954B26A518F000D6F0AC /* SingleViewModel.swift */,
+				2068955926A59D9000D6F0AC /* QiitaTagViewModel.swift */,
+				2068955B26A59D9B00D6F0AC /* DoubleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2068955E26A6511400D6F0AC /* Subject */ = {
+			isa = PBXGroup;
+			children = (
+				2068955F26A6512B00D6F0AC /* AlertSubject.swift */,
+			);
+			path = Subject;
 			sourceTree = "<group>";
 		};
 		20C895DB2672E7A6001AA1DE /* Model */ = {
@@ -442,6 +461,7 @@
 				2068955826A58A0E00D6F0AC /* QiitaTagView.swift in Sources */,
 				208D6E8826749A70008696B4 /* GithubTempItemView.swift in Sources */,
 				2005075F2671131B009D7EE0 /* SampleConcurrency.xcdatamodeld in Sources */,
+				2068956026A6512B00D6F0AC /* AlertSubject.swift in Sources */,
 				20F53E482671162F007C80EA /* GithubView.swift in Sources */,
 				20C895E42672E816001AA1DE /* APIError.swift in Sources */,
 			);
