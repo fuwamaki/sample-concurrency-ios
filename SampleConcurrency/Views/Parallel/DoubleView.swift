@@ -1,5 +1,5 @@
 //
-//  DoubleView.swift
+//  ParallelView.swift
 //  SampleConcurrency
 //
 //  Created by yusaku maki on 2021/06/16.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DoubleView: View {
+struct ParallelView: View {
     @ObservedObject private var viewModel = DoubleViewModel()
     @ObservedObject var alertSubject: AlertSubject = AlertSubject()
 
@@ -59,8 +59,8 @@ struct DoubleView: View {
     }
 }
 
-struct DoubleView_Previews: PreviewProvider {
+struct ParallelView_Previews: PreviewProvider {
     static var previews: some View {
-        DoubleView()
+        ParallelView()
     }
 }

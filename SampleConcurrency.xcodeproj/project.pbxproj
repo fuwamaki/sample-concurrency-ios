@@ -227,22 +227,22 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		2068955426A5899B00D6F0AC /* QiitaTag */ = {
+		2068955426A5899B00D6F0AC /* Serial */ = {
 			isa = PBXGroup;
 			children = (
 				2068955726A58A0E00D6F0AC /* QiitaTagView.swift */,
 				2068956526A6A9A400D6F0AC /* Components */,
 			);
-			path = QiitaTag;
+			path = Serial;
 			sourceTree = "<group>";
 		};
-		2068955526A589B300D6F0AC /* Double */ = {
+		2068955526A589B300D6F0AC /* Parallel */ = {
 			isa = PBXGroup;
 			children = (
 				207195442679655700B497B0 /* DoubleView.swift */,
 				2068955626A589F400D6F0AC /* Components */,
 			);
-			path = Double;
+			path = Parallel;
 			sourceTree = "<group>";
 		};
 		2068955626A589F400D6F0AC /* Components */ = {
@@ -317,8 +317,8 @@
 			isa = PBXGroup;
 			children = (
 				2068955226A588E500D6F0AC /* Single */,
-				2068955426A5899B00D6F0AC /* QiitaTag */,
-				2068955526A589B300D6F0AC /* Double */,
+				2068955426A5899B00D6F0AC /* Serial */,
+				2068955526A589B300D6F0AC /* Parallel */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -22,17 +22,17 @@ struct ContentView: View {
             SingleView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
-                    Text("Search")
+                    Text("Single")
                 }
-            QiitaTagView()
+            SerialView()
                 .tabItem {
                     Image(systemName: "tag")
-                    Text("TagItems")
+                    Text("Serial")
                 }
-            DoubleView()
+            ParallelView()
                 .tabItem {
                     Image(systemName: "list.bullet")
-                    Text("Repositories")
+                    Text("Parallel")
                 }
         }
 //        List {

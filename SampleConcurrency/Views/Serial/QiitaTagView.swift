@@ -1,5 +1,5 @@
 //
-//  QiitaTagView.swift
+//  SerialView.swift
 //  SampleConcurrency
 //
 //  Created by yusaku maki on 2021/07/19.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QiitaTagView: View {
+struct SerialView: View {
     @ObservedObject private var viewModel = QiitaTagViewModel()
     @ObservedObject var alertSubject: AlertSubject = AlertSubject()
 
@@ -59,8 +59,8 @@ struct QiitaTagView: View {
     }
 }
 
-struct QiitaTagView_Previews: PreviewProvider {
+struct SerialView_Previews: PreviewProvider {
     static var previews: some View {
-        QiitaTagView()
+        SerialView()
     }
 }
