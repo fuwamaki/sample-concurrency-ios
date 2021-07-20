@@ -24,8 +24,18 @@ class QiitaTagViewModel: ObservableObject {
 extension QiitaTagViewModel {
     func fetch() async throws {
         isLoading = true
-        let list: [QiitaTag] = try await apiClient.call(url: APIUrl.qiitaTag)
-        print(list)
+        let qiitaTags: [QiitaTag] = try await apiClient.call(url: APIUrl.qiitaTag)
+        guard qiitaTags.count > 0 else {
+            throw APIError.unknownError
+        }
+        let firstQiitaTag = qiitaTags[0]
+        let firstQiitaTagItem: [QiitaItem] = try await apiClient
+            .call(url: APIUrl.qiitaItem(query: firstQiitaTag.id))
+        await set(tag: firstQiitaTag, items: firstQiitaTagItem)
+    }
+
+    @MainActor func set(tag: QiitaTag, items: [QiitaItem]) {
+        list.append(QiitaListEntity(id: tag.id, list: items))
         isLoading = false
     }
 }
