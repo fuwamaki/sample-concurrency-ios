@@ -39,10 +39,12 @@ final class APIClient {
         guard APIClient.networkStatus == .satisfied else {
             throw APIError.networkError
         }
+        debugPrint("Request: " + url.absoluteString)
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.unknownError
         }
+        debugPrint("Response Status Code: " + String(httpResponse.statusCode))
         switch httpResponse.statusCode {
         case 200:
             do {

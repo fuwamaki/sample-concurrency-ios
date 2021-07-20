@@ -13,6 +13,6 @@ struct APIUrl {
     }
 
     static func qiitaItem(query: String, page: Int = 1, perPage: Int = 20) -> URL {
-        return URL(string: "https://qiita.com/api/v2/items?page=\(String(page))&per_page=\(String(perPage))&q=\(query)")!
+        return URL(string: "https://qiita.com/api/v2/items?page=\(String(page))&per_page=\(String(perPage))&query=\(query)")!
     }
 }
