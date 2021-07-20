@@ -14,10 +14,7 @@ struct GithubDouble: Identifiable {
 
 struct DoubleView: View {
     @ObservedObject private var viewModel = DoubleViewModel()
-
-    @State var isLoading: Bool = false
-    @State var isShowAlert: Bool = false
-    @State var alertMessage: String = ""
+    @ObservedObject var alertSubject: AlertSubject = AlertSubject()
 
     var body: some View {
         NavigationView {
@@ -39,7 +36,7 @@ struct DoubleView: View {
                 }
                 .padding()
                 .frame(width: UIScreen.main.bounds.width)
-                if isLoading {
+                if viewModel.isLoading {
                     ProgressView()
                         .scaleEffect(1.5, anchor: .center)
                         .tint(.cyan)
@@ -48,11 +45,8 @@ struct DoubleView: View {
             .navigationTitle(Text("Github Repositories"))
             .background(Color(UIColor.systemGray6))
         }
-        .alert(isPresented: $isShowAlert) {
-            Alert(
-                title: Text("エラー"),
-                message: Text(alertMessage),
-                dismissButton: .default(Text("OK")))
+        .alert(isPresented: $alertSubject.isShow) {
+            alertSubject.alert
         }
         .onAppear {
             fetch()
@@ -62,15 +56,10 @@ struct DoubleView: View {
     private func fetch() {
         async {
             do {
-                isLoading = true
                 try await viewModel.fetch2()
             } catch let error {
-                if let apiError = error as? APIError {
-                    alertMessage = apiError.message
-                    isShowAlert.toggle()
-                }
+                alertSubject.show(error: error)
             }
-            isLoading = false
         }
     }
 }

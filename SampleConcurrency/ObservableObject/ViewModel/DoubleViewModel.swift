@@ -11,6 +11,7 @@ class DoubleViewModel: ObservableObject {
     @Published var swiftGithubRepos: [GithubRepo] = []
     @Published var kotlinGithubRepos: [GithubRepo] = []
     @Published var qiitaItems: [QiitaItem] = []
+    @Published var isLoading: Bool = false
 
     var repoItems: [GithubDouble] {
         var items: [GithubDouble] = []
@@ -29,6 +30,7 @@ class DoubleViewModel: ObservableObject {
 // API
 extension DoubleViewModel {
     func fetch() async throws {
+        isLoading = true
         async let swiftList: GithubRepoList = apiClient
             .call(url: APIUrl.githubRepo(query: "swift"))
         async let kotlinList: GithubRepoList = apiClient
@@ -40,9 +42,11 @@ extension DoubleViewModel {
     @MainActor func set(list: [GithubRepoList]) {
         swiftGithubRepos = list[0].items
         kotlinGithubRepos = list[1].items
+        isLoading = false
     }
 
     func fetch2() async throws {
+        isLoading = true
         async let swiftList: GithubRepoList = apiClient
             .call(url: APIUrl.githubRepo(query: "swift"))
         async let kotlinList: GithubRepoList = apiClient
@@ -54,9 +58,11 @@ extension DoubleViewModel {
     @MainActor func set(list: (GithubRepoList, GithubRepoList)) {
         swiftGithubRepos = list.0.items
         kotlinGithubRepos = list.1.items
+        isLoading = false
     }
 
     func fetchGithubAndQiita() async throws {
+        isLoading = true
         async let swiftList: GithubRepoList = apiClient
             .call(url: APIUrl.githubRepo(query: "swift"))
         async let kotlinList: [QiitaItem] = apiClient
@@ -68,5 +74,6 @@ extension DoubleViewModel {
     @MainActor func set(list: (GithubRepoList, [QiitaItem])) {
         swiftGithubRepos = list.0.items
         qiitaItems = list.1
+        isLoading = false
     }
 }
