@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import Network
 
 final class APIClient {
+
+    static var networkStatus: NWPath.Status = .satisfied
 
     func fetchQiitaTag(url: URL) async throws -> [QiitaTag] {
         let (data, response) = try await URLSession.shared.data(from: url)
@@ -33,6 +36,9 @@ final class APIClient {
     }
 
     func call<T: Codable>(url: URL) async throws -> T {
+        guard APIClient.networkStatus == .satisfied else {
+            throw APIError.networkError
+        }
         let (data, response) = try await URLSession.shared.data(from: url)
         guard let httpResponse = response as? HTTPURLResponse else {
             throw APIError.unknownError
