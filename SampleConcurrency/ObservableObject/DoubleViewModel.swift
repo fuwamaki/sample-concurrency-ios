@@ -33,6 +33,10 @@ extension DoubleViewModel {
         async let kotlinList: GithubRepoList = apiClient
             .call(url: APIUrl.githubRepo(query: "kotlin"))
         let list = try await [swiftList, kotlinList]
+        await aaa(list: list)
+    }
+
+    @MainActor func aaa(list: [GithubRepoList]) {
         swiftGithubRepos = list[0].items
         kotlinGithubRepos = list[1].items
     }
