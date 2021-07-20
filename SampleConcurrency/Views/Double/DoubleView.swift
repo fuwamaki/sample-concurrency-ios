@@ -63,7 +63,7 @@ struct DoubleView: View {
         async {
             do {
                 isLoading = true
-                try await viewModel.fetch()
+                try await viewModel.fetch2()
             } catch let error {
                 if let apiError = error as? APIError {
                     alertMessage = apiError.message
