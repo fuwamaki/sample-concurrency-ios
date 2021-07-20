@@ -13,7 +13,7 @@ class DoubleViewModel: ObservableObject {
     @Published var qiitaItems: [QiitaItem] = []
     @Published var isLoading: Bool = false
 
-    var repoItems: [GithubListEntity] {
+    var doubleList: [GithubListEntity] {
         var items: [GithubListEntity] = []
         if swiftGithubRepos.count > 0 {
             items.append(GithubListEntity(id: "swift", list: swiftGithubRepos))

@@ -15,7 +15,7 @@ struct DoubleView: View {
         NavigationView {
             ZStack {
                 VStack(alignment: .leading) {
-                    ForEach(viewModel.repoItems) { item in
+                    ForEach(viewModel.doubleList) { item in
                         Text(item.id)
                             .font(.title3)
                             .padding(.top, 2)
