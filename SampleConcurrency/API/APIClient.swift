@@ -34,14 +34,22 @@ final class APIClient {
 
     func call<T: Codable>(url: URL) async throws -> T {
         let (data, response) = try await URLSession.shared.data(from: url)
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 else {
-                  throw APIError.unknownError
-              }
-        do {
-            return try JSONDecoder().decode(T.self, from: data)
-        } catch {
-            throw APIError.jsonParseError
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw APIError.unknownError
+        }
+        switch httpResponse.statusCode {
+        case 200:
+            do {
+                return try JSONDecoder().decode(T.self, from: data)
+            } catch {
+                throw APIError.jsonParseError
+            }
+        case 401:
+            throw APIError.unauthorizedError
+        case 503:
+            throw APIError.maintenanceError
+        default:
+            throw APIError.unknownError
         }
     }
 }
