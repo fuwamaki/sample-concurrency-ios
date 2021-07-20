@@ -10,7 +10,6 @@ import SwiftUI
 struct QiitaView: View {
     @ObservedObject var viewModel: SingleViewModel
     @StateObject var alertSubject: AlertSubject = AlertSubject()
-    @State private var isLoading: Bool = false
 
     var body: some View {
         ZStack {
@@ -18,7 +17,7 @@ struct QiitaView: View {
                 QiitaTempItemView(item: item)
             }
             .listStyle(.plain)
-            if isLoading {
+            if viewModel.isLoading {
                 ProgressView()
                     .scaleEffect(1.5, anchor: .center)
                     .tint(.cyan)
@@ -30,17 +29,18 @@ struct QiitaView: View {
         .onReceive(viewModel.$searchText) { text in
             fetch(text)
         }
+        .onDisappear {
+            viewModel.isLoading = false
+        }
     }
 
     func fetch(_ text: String) {
         async {
-            isLoading = true
             do {
                 try await viewModel.fetchQiitaItem(text: text)
             } catch let error {
                 alertSubject.show(error: error)
             }
-            isLoading = false
         }
     }
 }

@@ -11,7 +11,6 @@ struct SingleView: View {
     @ObservedObject private var viewModel = SingleViewModel()
     @State private var selectedType: SingleItemType = .github
     @State private var searchText: String = ""
-    @State private var isSearching: Bool = false
 
     var body: some View {
         NavigationView {
