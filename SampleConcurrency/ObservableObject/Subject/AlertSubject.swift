@@ -24,4 +24,11 @@ class AlertSubject: ObservableObject {
         self.message = message
         self.isShow.toggle()
     }
+
+    func show(error: Error) {
+        if let apiError = error as? APIError {
+            self.message = apiError.message
+            self.isShow.toggle()
+        }
+    }
 }

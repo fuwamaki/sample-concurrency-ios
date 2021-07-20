@@ -9,7 +9,7 @@ import Foundation
 
 struct APIUrl {
     static func githubRepo(query: String) -> URL {
-        return URL(string: "https://api.github.com/search/repositoriesa?q=\(query)")!
+        return URL(string: "https://api.github.com/search/repositories?q=\(query)")!
     }
 
     static func qiitaItem(query: String, page: Int = 1, perPage: Int = 20) -> URL {

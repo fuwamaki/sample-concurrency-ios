@@ -9,10 +9,8 @@ import SwiftUI
 
 struct QiitaView: View {
     @ObservedObject var viewModel: SingleViewModel
-
+    @StateObject var alertSubject: AlertSubject = AlertSubject()
     @State private var isLoading: Bool = false
-    @State private var isShowAlert: Bool = false
-    @State private var alertMessage: String = ""
 
     var body: some View {
         ZStack {
@@ -26,11 +24,8 @@ struct QiitaView: View {
                     .tint(.cyan)
             }
         }
-        .alert(isPresented: $isShowAlert) {
-            Alert(
-                title: Text("エラー"),
-                message: Text(alertMessage),
-                dismissButton: .default(Text("OK")))
+        .alert(isPresented: $alertSubject.isShow) {
+            alertSubject.alert
         }
         .onReceive(viewModel.$searchText) { text in
             fetch(text)
@@ -43,10 +38,7 @@ struct QiitaView: View {
             do {
                 try await viewModel.fetchQiitaItem(text: text)
             } catch let error {
-                if let apiError = error as? APIError {
-                    alertMessage = apiError.message
-                    isShowAlert.toggle()
-                }
+                alertSubject.show(error: error)
             }
             isLoading = false
         }

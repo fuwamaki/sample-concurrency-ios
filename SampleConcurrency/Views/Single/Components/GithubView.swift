@@ -38,9 +38,7 @@ struct GithubView: View {
             do {
                 try await viewModel.fetchGithubRepo(text: text)
             } catch let error {
-                if let apiError = error as? APIError {
-                    self.alertSubject.show(message: apiError.message)
-                }
+                alertSubject.show(error: error)
             }
             isLoading = false
         }
