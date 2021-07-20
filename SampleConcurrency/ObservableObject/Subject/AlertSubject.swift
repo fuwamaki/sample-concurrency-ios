@@ -56,7 +56,10 @@ class AlertSubject: ObservableObject {
         self.isShow.toggle()
     }
 
-    func showSingle(title: String, message: String?, choiceText: String? = nil, action: (() -> Void)? = nil) {
+    func showSingle(title: String,
+                    message: String?,
+                    choiceText: String? = nil,
+                    action: (() -> Void)? = nil) {
         self.title = title
         self.message = message
         self.choiceText = choiceText ?? "OK"
@@ -65,7 +68,11 @@ class AlertSubject: ObservableObject {
         self.isShow.toggle()
     }
 
-    func showDouble(title: String, message: String?, choiceText: String? = nil, action: (() -> Void)? = nil, cancelAction: (() -> Void)? = nil) {
+    func showDouble(title: String,
+                    message: String?,
+                    choiceText: String? = nil,
+                    action: (() -> Void)? = nil,
+                    cancelAction: (() -> Void)? = nil) {
         self.title = title
         self.message = message
         self.choiceText = choiceText ?? "OK"
