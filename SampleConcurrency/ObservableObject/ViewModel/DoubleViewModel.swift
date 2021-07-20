@@ -13,13 +13,13 @@ class DoubleViewModel: ObservableObject {
     @Published var qiitaItems: [QiitaItem] = []
     @Published var isLoading: Bool = false
 
-    var repoItems: [GithubDouble] {
-        var items: [GithubDouble] = []
+    var repoItems: [GithubListEntity] {
+        var items: [GithubListEntity] = []
         if swiftGithubRepos.count > 0 {
-            items.append(GithubDouble(id: "swift", list: swiftGithubRepos))
+            items.append(GithubListEntity(id: "swift", list: swiftGithubRepos))
         }
         if kotlinGithubRepos.count > 0 {
-            items.append(GithubDouble(id: "kotlin", list: kotlinGithubRepos))
+            items.append(GithubListEntity(id: "kotlin", list: kotlinGithubRepos))
         }
         return items
     }

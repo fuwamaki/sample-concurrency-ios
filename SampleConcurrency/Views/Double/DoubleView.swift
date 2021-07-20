@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-struct GithubDouble: Identifiable {
-    var id: String
-    let list: [GithubRepo]
-}
-
 struct DoubleView: View {
     @ObservedObject private var viewModel = DoubleViewModel()
     @ObservedObject var alertSubject: AlertSubject = AlertSubject()

@@ -23,6 +23,7 @@
 		2068955A26A59D9000D6F0AC /* QiitaTagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955926A59D9000D6F0AC /* QiitaTagViewModel.swift */; };
 		2068955C26A59D9B00D6F0AC /* DoubleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955B26A59D9B00D6F0AC /* DoubleViewModel.swift */; };
 		2068956026A6512B00D6F0AC /* AlertSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068955F26A6512B00D6F0AC /* AlertSubject.swift */; };
+		2068956226A6A72200D6F0AC /* GithubListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2068956126A6A72200D6F0AC /* GithubListEntity.swift */; };
 		20719541267961D800B497B0 /* QiitaTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719540267961D800B497B0 /* QiitaTag.swift */; };
 		20719543267962E600B497B0 /* QiitaItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20719542267962E600B497B0 /* QiitaItem.swift */; };
 		207195452679655700B497B0 /* DoubleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207195442679655700B497B0 /* DoubleView.swift */; };
@@ -78,6 +79,7 @@
 		2068955926A59D9000D6F0AC /* QiitaTagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTagViewModel.swift; sourceTree = "<group>"; };
 		2068955B26A59D9B00D6F0AC /* DoubleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleViewModel.swift; sourceTree = "<group>"; };
 		2068955F26A6512B00D6F0AC /* AlertSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertSubject.swift; sourceTree = "<group>"; };
+		2068956126A6A72200D6F0AC /* GithubListEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubListEntity.swift; sourceTree = "<group>"; };
 		20719540267961D800B497B0 /* QiitaTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaTag.swift; sourceTree = "<group>"; };
 		20719542267962E600B497B0 /* QiitaItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaItem.swift; sourceTree = "<group>"; };
 		207195442679655700B497B0 /* DoubleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleView.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		20C895DB2672E7A6001AA1DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2068956126A6A72200D6F0AC /* GithubListEntity.swift */,
 				20C895DC2672E7C0001AA1DE /* GithubRepoList.swift */,
 				20C895DE2672E7DC001AA1DE /* GithubRepo.swift */,
 				20C895E02672E7EE001AA1DE /* GithubRepoOwner.swift */,
@@ -437,6 +440,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2071954D2679B3E800B497B0 /* QiitaItemUser.swift in Sources */,
+				2068956226A6A72200D6F0AC /* GithubListEntity.swift in Sources */,
 				2071954B2679B3D400B497B0 /* QiitaItemTag.swift in Sources */,
 				2005075C2671131B009D7EE0 /* Persistence.swift in Sources */,
 				20719543267962E600B497B0 /* QiitaItem.swift in Sources */,
