@@ -42,7 +42,7 @@ struct QiitaTempItemView: View {
     }
 
     private func fetch() {
-        async {
+        Task {
             guard imageData == nil else { return }
             imageData = try await apiClient
                 .fetchImageData(url: URL(string: item.user.profileImageUrl)!)

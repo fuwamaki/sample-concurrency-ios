@@ -35,7 +35,7 @@ struct GithubView: View {
     }
 
     func fetch(_ text: String) {
-        async {
+        Task {
             do {
                 try await viewModel.fetchGithubRepo(text: text)
             } catch let error {

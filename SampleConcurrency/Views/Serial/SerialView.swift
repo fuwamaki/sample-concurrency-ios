@@ -49,7 +49,7 @@ struct SerialView: View {
     }
 
     private func fetch() {
-        async {
+        Task {
             do {
                 try await viewModel.fetch()
             } catch let error {

@@ -35,7 +35,7 @@ struct QiitaView: View {
     }
 
     func fetch(_ text: String) {
-        async {
+        Task {
             do {
                 try await viewModel.fetchQiitaItem(text: text)
             } catch let error {

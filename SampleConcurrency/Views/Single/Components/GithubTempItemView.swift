@@ -41,7 +41,7 @@ struct GithubTempItemView: View {
     }
 
     private func fetch() {
-        async {
+        Task {
             guard imageData == nil else { return }
             imageData = try await apiClient
                 .fetchImageData(url: URL(string: repo.owner.avatarUrl)!)
