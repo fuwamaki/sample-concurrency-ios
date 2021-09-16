@@ -49,7 +49,7 @@ struct ParallelView: View {
     }
 
     private func fetch() {
-        async {
+        Task {
             do {
                 try await viewModel.fetch2()
             } catch let error {

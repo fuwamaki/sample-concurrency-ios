@@ -46,7 +46,7 @@ struct QiitaSquareItemView: View {
     }
 
     private func fetch() {
-        async {
+        Task {
             guard imageData == nil else { return }
             imageData = try await apiClient
                 .fetchImageData(
