@@ -26,9 +26,11 @@ extension SingleViewModel {
         isLoading = true
         let list: GithubRepoList = try await apiClient
             .call(url: APIUrl.githubRepo(query: text))
-        isLoading = false
-        githubRepos = list.items
-        githubQuery = text
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.githubRepos = list.items
+            self.githubQuery = text
+        }
     }
 
     func fetchQiitaItem(text: String) async throws {
@@ -36,7 +38,9 @@ extension SingleViewModel {
         isLoading = true
         qiitaItems = try await apiClient
             .call(url: APIUrl.qiitaItem(query: text))
-        isLoading = false
-        qiitaQuery = text
+        DispatchQueue.main.async {
+            self.isLoading = false
+            self.qiitaQuery = text
+        }
     }
 }
