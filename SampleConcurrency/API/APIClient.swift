@@ -18,12 +18,7 @@ final class APIClient {
               httpResponse.statusCode == 200 else {
                   throw APIError.unknownError
               }
-        do {
-            let list = try JSONDecoder().decode([QiitaTag].self, from: data)
-            return list
-        } catch {
-            throw APIError.jsonParseError
-        }
+        return try JSONDecoder().decode([QiitaTag].self, from: data)
     }
 
     func fetchImageData(url: URL) async throws -> Data {
@@ -47,11 +42,7 @@ final class APIClient {
         debugPrint("Response Status Code: " + String(httpResponse.statusCode))
         switch httpResponse.statusCode {
         case 200:
-            do {
-                return try JSONDecoder().decode(T.self, from: data)
-            } catch {
-                throw APIError.jsonParseError
-            }
+            return try JSONDecoder().decode(T.self, from: data)
         case 401:
             throw APIError.unauthorizedError
         case 503:
